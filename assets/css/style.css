@@ -35,7 +35,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     gap: 34px;
-    width: 70%;
+    width: 60%;
     margin: 0px auto;
 }
 .conteiner .card{
@@ -66,10 +66,10 @@ body{
 .verso{
     transform: rotateY(180deg);
 }
-.card:hover .verso{
+.card.click .verso{
     transform: rotateY(0deg);
 }
-.card:hover .frente{
+.card.click .frente{
     transform: rotateY(-180deg);
 }
 

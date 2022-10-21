@@ -47,9 +47,28 @@ function embaralhador(){
 }
 
 
-let clickJogadas = 0;
+let firstCard;
+let twoCard;
 function clicar(virar){
-    virar.classList.toggle('click');
+    if(firstCard === undefined){
+        virar.classList.add('click');
+        firstCard = virar;
+    }else if(twoCard === undefined){
+        virar.classList.add('click');
+        twoCard = virar;
+    }
+    compararCard()
+    
+    console.log(firstCard);
+    console.log(twoCard);
+}
+function compararCard(){
+    if(firstCard === twoCard){
+
+    }else{
+        firstCard.classList.remove('click');
+        twoCard.classList.remove('click') ;       
+    }
 }
 
 

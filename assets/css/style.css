@@ -30,6 +30,23 @@ body{
     font-weight: 700;
     color:  #75B79E;
 }
+.playerTime{
+    width: 58%;
+    height: 40px;
+    background-color: #fff;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding: 0px 20px;
+}
+.player, .time{
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
 .conteiner{
     display: flex;
     justify-content: center;

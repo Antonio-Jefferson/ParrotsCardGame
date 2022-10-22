@@ -26,6 +26,7 @@
     height: 35px;
     margin-bottom: 20px;
     padding: 12px;
+    border-radius: 8px;
 }
 label{
     font-size: 18px;
@@ -38,14 +39,11 @@ label{
     height: 50px;
     border: none;
     border-radius: 12px;
-    color: rgb(158, 158, 158);
+    background-color: #0087D0;
+    color: #fff;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
     margin: auto;
-}
-.btnAtivo{
-    background-color: #0087D0;
-    color: #fff;
-    cursor: pointer;
 }

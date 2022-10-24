@@ -185,4 +185,11 @@ img{
     .resultado h1{
         font-size: 40px;
     }
+    .conteiner{
+        width: 100%;
+    }
+    .playerTime{
+        width: 100%;
+    }
 }
+

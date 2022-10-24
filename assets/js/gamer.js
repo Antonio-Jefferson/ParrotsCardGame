@@ -6,7 +6,6 @@ let i;
 let jogadas = 0;
 let nome; 
 
-
 function iniciar(){
     const imgCards = [
         'arara.jpg',

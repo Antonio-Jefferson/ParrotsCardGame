@@ -4,5 +4,4 @@ function iniciarGamer(){
 
     localStorage.nomePLayer = JSON.stringify(nome)
     localStorage.NumeroDeCartas = JSON.stringify(numero)
-    window.open('./gamer.html');
 }

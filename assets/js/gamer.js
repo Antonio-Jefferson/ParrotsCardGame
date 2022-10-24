@@ -1,6 +1,11 @@
-let numberCartas;
+let numberCartas = 0;
 let primeiro = '';
 let segundo = '';
+let cont = 0;
+let i;
+let jogadas = 0;
+let nome; 
+
 
 function iniciar(){
     const imgCards = [
@@ -36,9 +41,10 @@ function iniciar(){
         'pombo'
     ]   
     const cartas = [];
-    const conteiner = document.querySelector('.conteiner')
-
-    numberCartas = 0;
+    const conteiner = document.querySelector('.conteiner');
+    const nomePlayer = document.querySelector('.jogador')
+    nome = prompt('Digite seu nome: ')
+    nomePlayer.innerHTML = nome;
     while(numberCartas < 4 || numberCartas > 14 || numberCartas % 2 !== 0){
         numberCartas = Number(prompt("DIGITE A QUANTIDADE DE CARTAS: "));
     } 
@@ -52,21 +58,18 @@ function iniciar(){
             <img src="assets/img/${imgCards[i]}">
         </div>
     </li>`) 
+    
     }
-
     cartas.sort(embaralhador);
-
     for(let i = 0;numberCartas > i; i++){
         conteiner.innerHTML += cartas[i];
     }
-}
-//=================================================================================================
 
-function embaralhador(){
-    return Math.random() -0.5;
 }
-let cont = 0;
-let i;
+function embaralhador(){
+    return Math.random() -0.5
+}
+
 function time(){
     i = setInterval(encrementar, 1000);
 }
@@ -83,24 +86,14 @@ function clicar(virar){
     if(primeiro === ''){
         virar.classList.add('click');
         primeiro = virar;
+        jogadas += 1;
     }else if(segundo == ''){
         virar.classList.add('click');
         segundo = virar;
+        jogadas += 1;
         compraraCartas()
     }
-
 }
-function endGamer(){
-    const acertos = document.querySelectorAll('.click')
-
-    if(acertos.length === numberCartas){
-        setTimeout(() => {
-            alert('Parabéns, Fim de jogo!')
-            clearInterval(i);
-        }, 300);
-    }
-}
-
 function compraraCartas(){
     const cardOne = primeiro.getAttribute('data-check');
     const cardTwo = segundo.getAttribute('data-check');
@@ -121,12 +114,33 @@ function compraraCartas(){
             primeiro = '';
             segundo = '';
         }, 500);
-       
     }
-
+}
+function endGamer(){
+    const acertos = document.querySelectorAll('.click');
+    const fimDoJogo = document.querySelector('.endGamer');
+    const time = document.querySelector('.tempo-de-jogo');
+    const numberJogadas = document.querySelector('.jogadas');
+    const namePlayer = document.querySelector('.nomePlayer')
+    if(acertos.length === numberCartas){
+        setTimeout(() => {
+            fimDoJogo.classList.remove('escondido');
+            time.innerHTML = `${cont}s`;
+            numberJogadas.innerHTML = jogadas;
+            namePlayer.innerHTML = nome;
+            clearInterval(i);
+        }, 300);
+    }
 }
 
-
+function jogarNovamente(){
+    const fimDoJogo = document.querySelector('.endGamer');
+    fimDoJogo.classList.add('escondido');
+    setTimeout(() => {
+      window.location.reload()
+    }, 300);
+ 
+}
 iniciar();
 embaralhador();
 time()

@@ -1,14 +1,8 @@
-const form = document.querySelector('.iniciar');
-const nome = document.querySelector('.nome');
-const numero = document.querySelector('.numberCards');
+function iniciarGamer(){
+    const nome = document.querySelector('.nome').value;
+    const numero = document.querySelector('.numberDeCartas').value;
 
-function iniciarGamer(event){
-    event.preventDefault();
-
-
-    localStorage.setItem('player',nome.value)
-
-
-
-    window.open = "./gamer.html";
+    localStorage.nomePLayer = JSON.stringify(nome)
+    localStorage.NumeroDeCartas = JSON.stringify(numero)
+    window.open('./gamer.html');
 }

@@ -30,6 +30,10 @@ body{
     font-weight: 700;
     color:  #75B79E;
 }
+.jogador{
+    color: red;
+    margin-left: 8px;
+}
 .playerTime{
     width: 58%;
     height: 40px;
